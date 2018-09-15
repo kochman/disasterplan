@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: safetynet-app
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
   type: NodePort
   ports:
     # the port that this service should serve on
-    - port: 80
+    - port: 5000
   # label keys and values that must match in order to receive traffic for this service
   selector:
     app: safetynet-app
