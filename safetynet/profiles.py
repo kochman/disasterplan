@@ -13,4 +13,4 @@ def create_profile(data):
 
 
 def get_profiles():
-    return [p for p in Profile.select()]
+    return (p for p in Profile.select())
