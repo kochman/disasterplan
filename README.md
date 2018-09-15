@@ -38,11 +38,11 @@ python app.py
 
     ```
     {
-        name: "Safetynet User",
-        location: {
-            latitude: 42.733011,
-            longitude: -73.667795
+        "name": "Safetynet User",
+        "location": {
+            "latitude": 42.733011,
+            "longitude": -73.667795
         },
-        status: "A freeform text field for users to provide information..."
+        "status": "A freeform text field for users to provide information..."
     }
     ```
