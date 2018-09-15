@@ -16,7 +16,7 @@ safetynet is written in Python. To run safetynet for development:
 ```
 git clone git@github.com:kochman/safetynet.git
 cd safetynet
-pipenv install
+pipenv install --three
 ```
 
 ### Running
