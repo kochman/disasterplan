@@ -28,6 +28,7 @@ spec:
   ports:
     # the port that this service should serve on
     - port: 5000
+      nodePort: 31111
   # label keys and values that must match in order to receive traffic for this service
   selector:
     app: safetynet-app
