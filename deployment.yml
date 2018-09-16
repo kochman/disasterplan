@@ -16,19 +16,20 @@ spec:
         #imagePullPolicy: Never        
         ports:
         - containerPort: 5000
+          hostPort: 80
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: safetynet-service
-  labels:
-    app: safetynet-service
-spec:
-  type: NodePort
-  ports:
-    # the port that this service should serve on
-    - port: 5000
-      nodePort: 80
-  # label keys and values that must match in order to receive traffic for this service
-  selector:
-    app: safetynet-app
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: safetynet-service
+#   labels:
+#     app: safetynet-service
+# spec:
+#   type: NodePort
+#   ports:
+#     # the port that this service should serve on
+#     - port: 5000
+#       nodePort: 31111
+#   # label keys and values that must match in order to receive traffic for this service
+#   selector:
+#     app: safetynet-app
