@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<form method="POST">
-		<fieldset>
-			<legend>Information:</legend>
-			Name:<br>
-			<input type="text" name="name" id="username"><br>
-			<!--Location:<br>
-			<input type="text" name="location" id="location"><br><br>
-			<input type="submit" value="Submit">-->
-            <button onClick="getName()">Click</button>
-		</fieldset>
-	</form>
+
+	<body>
+		<script src="static/location.js"></script>
+	<p><button onclick="geoFindMe()">Find my location</button></p>
+	<div id="out"></div>
+	
+	<div>
+		Name:<br>
+		<input type="text" id="username"><br>
+		<button onclick="setUsername()">Submit</button>
+	</div>
+    </body>
 </html>
