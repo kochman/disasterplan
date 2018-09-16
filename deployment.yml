@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: safetynet-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: safetynet-app
+    spec:
+      containers:
+      - name: safetynet-app
+        image: safetynet:1
+        # for local development against minikube registry
+        #imagePullPolicy: Never        
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: safetynet-service
+  labels:
+    app: safetynet-service
+spec:
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+    - port: 5000
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    app: safetynet-app
