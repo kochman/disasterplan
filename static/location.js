@@ -41,6 +41,9 @@ function setUsername() {
 			'Content-Type': 'application/json'
 		}
 	})
-		.then(response => response.json());
+		.then(response => response.json())
+		.then(resp => {
+			localStorage.setItem('profile_token', resp.token);
+		});
 }
 
