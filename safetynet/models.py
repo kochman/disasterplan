@@ -16,7 +16,8 @@ class Profile(Model):
         return {
             "id": self.id,
             "name": self.name,
-            "location": {"latitude": self.latitude, "longitude": self.longitude},
+            "latitude": self.latitude,
+            "longitude": self.longitude,
             "status": self.status,
         }
 
