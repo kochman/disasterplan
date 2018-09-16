@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 peewee = "*"
+gunicorn = "*"
 
 [dev-packages]
 black = "==18.6b4"
