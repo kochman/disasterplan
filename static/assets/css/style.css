@@ -707,15 +707,17 @@ textarea::-ms-input-placeholder{
 }
 /*heading title all area*/
 .head_title{
+    text-align: center;
     padding-bottom: 2.143rem;
     overflow: hidden;
 }
 .head_title h2{
+
     font-weight: 400;
     font-size:2.250rem;
     color:#16293b;
-    border-left:3px solid #fddc57;
-    padding-left:15px;
+    /*border-left:3px solid #fddc57;
+    padding-left:15px;*/
 }
 .head_title h2 strong{
     font-weight: 700;
@@ -894,7 +896,7 @@ Home Section style
 ==================*/
 
 .home{
-    background: url(../images/home-bg.jpg) no-repeat top center;
+    background: url(../images/hurricane-harvey.jpg) no-repeat top center;
     background-size: cover;
     position: relative;
     padding-top: 300px;
@@ -913,7 +915,11 @@ Home Section style
 
 }
 
-
+/*form */
+fieldset{
+    text-align:center;
+    margin:auto;
+}
 
 
 /*scrooldown
@@ -1055,8 +1061,20 @@ Featured section style
 /*
 Featured section style
 ========================*/
+.features h2{
+    font-family: 'Kaushan Script', cursive;
+    font-size:60px;
+    line-height: 60px;
+}
+
+.features fieldset{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 30px;
+}
+
 .features_item2_area{
-    position: relative;
+    position: center;
     width:100%;
 }
 
