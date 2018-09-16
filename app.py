@@ -42,9 +42,16 @@ def api_update_profile(profile_id):
 def index():
     return app.send_static_file("index.html")
 
+
 @app.route("/profile")
 def profile():
     return app.send_static_file("profile.html")
+
+
+@app.route("/map")
+def route_map():
+    return app.send_static_file("googlemap.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
