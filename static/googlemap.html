@@ -39,7 +39,7 @@
         
         <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <script src="static/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-       <script src="profile.js"></script>
+       <script src="/static/profile.js"></script>
        <script src="/static/map.js"> </script>
     </head>
 
@@ -101,11 +101,11 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#home">Home</a></li>                    
-                            <li><a href="#service">Services</a></li>
-                            <li><a href="requests.html">Resources</a></li>
+                            <li><a href="/static/index.html#home">Home</a></li>                    
+                            <li><a href="/static/index.html#service">Services</a></li>
+                            <li><a href="/static/requests.html">Resources</a></li>
                             <li><a href="https://www.callforcode.org/">Call for Code</a></li>
-                            <li><a href="#features">Sign Up</a></li>
+                            <li><a href="/static/index.html#features">Sign Up</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
@@ -147,42 +147,45 @@
                                <div id="out"></div>
 
                                <div id="map" style="height: 400px; width: 500px;">
-</div>
-<script type="text/javascript">
-    
-   /*var locations = [
-      ['Person1', 42.7284, -73.6918, 4],
-      ['Person2', 42.3,  -73.6918, 5],
-      ['Person3', 42.5,  -73.6918, 3],
-      ['Person4', 42.2,  -73.6918, 2],
-      ['Person5', 42,  -73.6918, 1]
-    ];*/
+                               </div>
+      <script type="text/javascript">
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(42.7284, -73.6918),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+         /*var locations = [
+            ['Person1', 42.7284, -73.6918, 4],
+            ['Person2', 42.3,  -73.6918, 5],
+            ['Person3', 42.5,  -73.6918, 3],
+            ['Person4', 42.2,  -73.6918, 2],
+            ['Person5', 42,  -73.6918, 1]
+          ];*/
 
-    var infowindow = new google.maps.InfoWindow();
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: new google.maps.LatLng(42.7284, -73.6918),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          });
 
-    var marker, i;
+          var infowindow = new google.maps.InfoWindow();
 
-    /*for (i = 0; i < locations.length; i++) { 
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+          var marker, i;
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }*/
-    getMapPoints();
-  </script>
+          /*for (i = 0; i < locations.length; i++) { 
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+              map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, i));
+          }*/
+          getMapPoints();
+        </script>
+                                       <div id="nearbyList">
+                                       
+                                       </div>
 
                                         <!-- <a href="" class="btn btn-default m-top-40">Read More</a> -->
                                    <!--  </div> -->
