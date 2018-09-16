@@ -42,6 +42,10 @@ def api_update_profile(profile_id):
 def index():
     return app.send_static_file("index.html")
 
+@app.route("/profile")
+def profile():
+    return app.send_static_file("profile.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

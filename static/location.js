@@ -44,6 +44,7 @@ function setUsername() {
 		.then(response => response.json())
 		.then(resp => {
 			localStorage.setItem('profile_token', resp.token);
+			localStorage.setItem('profile_id', resp.profile.id);
 		});
 }
 
