@@ -52,6 +52,7 @@ function updateInfo() {
 	})
 		.then(response => response.json())
 		.then(resp => {
+        window.location = "/map";
 		});
 }
 

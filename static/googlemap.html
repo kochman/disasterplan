@@ -40,7 +40,7 @@
         <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <script src="static/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
        <script src="profile.js"></script>
-       <script src="map.js"> </script>
+       <script src="/static/map.js"> </script>
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse" data-offset="100">
@@ -140,7 +140,10 @@
                                     </div>
                                     <div class="featured_content">
                                         <!-- Input information -->
-                                <p><button onclick="geoFindMe()">Update Location</button></p>
+                                <p><button onclick="geoFindMe()"  class="btn btn-default m-top-40">Update Location</button></p>
+                               <div id="out"></div>
+                                
+                                        <p><a href = "static/profile.html"><button class="btn btn-default m-top-40">Update Profile</button></a></p>
                                <div id="out"></div>
 
                                <div id="map" style="height: 400px; width: 500px;">
