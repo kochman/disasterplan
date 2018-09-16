@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 
 from safetynet.profiles import (
     create_profile,
     update_profile,
+    get_profile,
     get_profiles,
     get_nearby_profiles,
 )
@@ -14,7 +15,7 @@ app = Flask(__name__)
 def profiles():
     if request.method == "POST":
         profile = create_profile(request.json)
-        return jsonify(profile.to_dict())
+        return jsonify({"profile": profile.to_dict(), "token": profile.token()})
     elif request.method == "GET":
         # extract long and lat from the url and send to get nearby profiles
         lat = request.args.get("latitude", None)
@@ -28,7 +29,12 @@ def profiles():
 
 @app.route("/api/profiles/<int:profile_id>", methods=["POST"])
 def api_update_profile(profile_id):
-    profile = update_profile(request.json, profile_id)
+    j = request.json
+    unsafe_token = j["token"]
+    profile = get_profile(profile_id)
+    if unsafe_token != profile.token():
+        abort(401)
+    profile = update_profile(j["profile"], profile_id)
     return jsonify(profile.to_dict())
 
 

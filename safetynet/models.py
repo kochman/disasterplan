@@ -1,4 +1,4 @@
-from peewee import Model, CharField, FloatField, TextField
+from peewee import Model, CharField, FloatField, TextField, ForeignKeyField
 
 from .database import db
 
@@ -20,5 +20,17 @@ class Profile(Model):
             "status": self.status,
         }
 
+    def token(self):
+        pt = ProfileToken.get(ProfileToken.profile == self)
+        return str(pt.token)
 
-db.create_tables([Profile])
+
+class ProfileToken(Model):
+    profile = ForeignKeyField(Profile)
+    token = CharField()
+
+    class Meta:
+        database = db
+
+
+db.create_tables([Profile, ProfileToken])
