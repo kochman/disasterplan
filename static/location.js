@@ -2,14 +2,14 @@
 var latitude, longitude;
 function geoFindMe() {
 	var output = document.getElementById("out");
-	
-	if (!navigator.geolocation){
+
+	if (!navigator.geolocation) {
 		output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
 		return;
 	}
 
 	function success(position) {
-		latitude  = position.coords.latitude;
+		latitude = position.coords.latitude;
 		longitude = position.coords.longitude;
 
 		output.innerHTML = '<p>Latitude is ' + latitude + ' <br>Longitude is ' + longitude + '</p>';
@@ -25,18 +25,22 @@ function geoFindMe() {
 }
 
 // Determine user's name from input field
-function setUsername(){
+function setUsername() {
 	var username = document.getElementById("username").value;
 	profile = {
-        "name": username,
-        "latitude": latitude,
-        "longitude": longitude,
-        "status": ""
-    }
-    return fetch("/api/profile", {
-    	method: "POST",
-    	body: JSON.stringify(profile),
-    })
-    .then(response => response.json());
+		"name": username,
+		"latitude": latitude,
+		"longitude": longitude,
+		"status": ""
+	}
+	return fetch("/api/profiles", {
+		method: "POST",
+		body: JSON.stringify(profile),
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		}
+	})
+		.then(response => response.json());
 }
 
