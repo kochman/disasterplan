@@ -7,7 +7,8 @@ class Profile(Model):
     name = CharField()
     latitude = FloatField()
     longitude = FloatField()
-    status = TextField()
+    status = TextField(null=True)
+    phone_number = CharField(null=True)
 
     class Meta:
         database = db
@@ -19,6 +20,7 @@ class Profile(Model):
             "latitude": self.latitude,
             "longitude": self.longitude,
             "status": self.status,
+            "phone_number": self.phone_number,
         }
 
     def token(self):

@@ -8,11 +8,10 @@ from .database import db
 def create_profile(data):
     with db.atomic():
         profile = Profile(
-            name=data["name"],
-            latitude=data["latitude"],
-            longitude=data["longitude"],
-            status=data["status"],
+            name=data["name"], latitude=data["latitude"], longitude=data["longitude"]
         )
+        profile.status = data.get("status", None)
+        profile.phone_number = data.get("phone_number", None)
         profile.save()
 
         pt = ProfileToken(profile=profile, token=getrandbits(256))
